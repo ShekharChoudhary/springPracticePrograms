@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<bean id="triangle" class="com.shekhar.spring.tutorial08.Triangle">
+	<property name="pointA" ref="firstPoint">
+	</property>
+	<property name="pointB">
+		<bean class="com.shekhar.spring.tutorial08.Point">
+			<property name="x" value="20"/>
+			<property name="y" value="20"/>
+		</bean>
+	</property>
+	<property name="pointC">
+		<bean class="com.shekhar.spring.tutorial08.Point">
+			<property name="x" value="-20"/>
+			<property name="y" value="-20"/>
+		</bean>
+	</property>	
+</bean>
+<bean id="pointOne" class="com.shekhar.spring.tutorial08.Point" name="firstPoint">
+			<property name="x" value="0"/>
+			<property name="y" value="0"/>
+		</bean>
+		
+<!-- here if we give name="firstPoint" and alias="point1" then the system will not read name="firstPoint"
+and instead it will always use the alias name i.e. "point1" to use the name="firstPoint" we will have to 
+remove the tag of alias.
+  -->
+<!-- alias name="pointOne" alias="point1"/-->		
+</beans>
