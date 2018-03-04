@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<!-- if we do not mention autowiring then by default it is off. 
+we can do autowiring byName, byType, constructor. eg :- autowire="constructor"
+when we autowire a bean then it automatically gets mapped to its respective variable in the class
+so there pointA gets mapped to pointA variable of class Triangle pointB to pointB variable pointC to
+pointC variable of class Triangle.
+ -->
+	<bean id="triangle" class="com.shekhar.spring.tutorial10.Triangle" autowire="byName"/>
+	<bean id="pointA" class="com.shekhar.spring.tutorial10.Point">
+		<property name="x" value="0"/>
+		<property name="y" value="0"/>
+	</bean>
+	<bean id="pointB" class="com.shekhar.spring.tutorial10.Point">
+		<property name="x" value="20"/>
+		<property name="y" value="20"/>
+	</bean>
+	<bean id="pointC" class="com.shekhar.spring.tutorial10.Point">
+		<property name="x" value="-20"/>
+		<property name="y" value="-20"/>
+	</bean>	
+</beans>
