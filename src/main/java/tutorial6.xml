@@ -3,6 +3,11 @@
 <beans>
 <bean id="triangle" class="com.shekhar.spring.tutorial06.Triangle">
 <!-- constructor-arg value="Equilateral" /-->
-<constructor-arg value="30"/>
+<!-- even if we do not define type it automatically picks the value as int
+but in the case of multiple values in a constructor we should specify the type
+int the case of String or Integer we will write type="java.lang.String"
+or type="java.lang.Integer"
+ -->
+<constructor-arg value="30" type="int" />
 </bean>
 </beans>

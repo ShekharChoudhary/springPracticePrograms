@@ -9,7 +9,7 @@ public class Triangle {
 		this.number = number;
 		this.type = type;			
 	}*/
-	public Triangle(Integer number){
+	public Triangle(int number){
 		this.number = number;
 	}
 	public Triangle(String type){
