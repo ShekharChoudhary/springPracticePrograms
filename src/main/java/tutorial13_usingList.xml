@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+ <!-- When we write abstract="true" then that bean is used as a template and can be used by other beans
+ but no bean is created for the bean with abstract="true". So here in out example the bean is not created
+ for the parentTriangle bean and instead it is used as a template. 
+  -->
+	<bean id="parentTriangle" class="com.shekhar.spring.tutorial13_usingList.Triangle" abstract="true">
+		<property name="point">
+			<list>
+				<ref bean="pointA" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="triangle" class="com.shekhar.spring.tutorial13_usingList.Triangle" parent="parentTriangle">
+		<property name="point">
+			<list merge="true">
+				<ref bean="pointB" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pointA" class="com.shekhar.spring.tutorial13_usingList.Point">
+		<property name="x" value="0"/>
+		<property name="y" value="0"/>
+	</bean>
+	
+	<bean id="pointB" class="com.shekhar.spring.tutorial13_usingList.Point">
+		<property name="x" value="10"/>
+		<property name="y" value="20"/>
+	</bean>
+	
+</beans>
