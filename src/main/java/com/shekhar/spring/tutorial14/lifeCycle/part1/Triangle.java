@@ -5,6 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+/**
+ * If we implement the interfaces InitializingBean and DisposableBean and also defind the 
+ * init-method and destroy-method property in the XML file then first the default methods of
+ * the interfaces are run and after that the methods mentioned in the xml file are run.
+ * @author choudshe
+ *
+ */
 public class Triangle implements InitializingBean,DisposableBean {
 
 	private List<Point> point;

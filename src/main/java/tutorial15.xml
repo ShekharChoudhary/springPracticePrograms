@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="triangle" class="com.shekhar.spring.tutorial15.Triangle">
+		<property name="point">
+			<set>
+			   <ref bean="pointA"/>
+			   <ref bean="pointB"/>
+			   <ref bean="pointC"/>
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="pointA" class="com.shekhar.spring.tutorial15.Point">
+		<property name="x" value="0"/>
+		<property name="y" value="0"/>
+	</bean>
+	
+	<bean id="pointB" class="com.shekhar.spring.tutorial15.Point">
+		<property name="x" value="20"/>
+		<property name="y" value="20"/>
+	</bean>
+	
+	<bean id="pointC" class="com.shekhar.spring.tutorial15.Point">
+		<property name="x" value="-20"/>
+		<property name="y" value="-20"/>
+	</bean>
+	
+	<bean class="com.shekhar.spring.tutorial15.DisplayBeanPostProcessor"></bean>
+</beans>

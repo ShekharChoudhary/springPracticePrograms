@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<!--  
+<beans default-init-method="startUp" default-destroy-method="shutDown">
+when we use default-init-method in beans tag then we can define this method globally and it can be
+defined in any class. Similarly when we use default-destroy-method then this method can be defined in 
+any class.
+ -->
+ 
+<<beans>
+	<bean id="triangle" class="com.shekhar.spring.tutorial14.lifeCycle.part2.Triangle" init-method="startUp" destroy-method="shutDown">
+		<property name="point">
+			<list>
+				<ref bean="pointA"/>
+				<ref bean="pointB"/>
+				<ref bean="pointC"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pointA" class="com.shekhar.spring.tutorial14.lifeCycle.part2.Point">
+		<property name="x" value="0"/>
+		<property name="y" value="0"/>
+	</bean>
+		<bean id="pointB" class="com.shekhar.spring.tutorial14.lifeCycle.part2.Point">
+		<property name="x" value="20"/>
+		<property name="y" value="20"/>
+	</bean>
+		<bean id="pointC" class="com.shekhar.spring.tutorial14.lifeCycle.part2.Point">
+		<property name="x" value="-20"/>
+		<property name="y" value="-20"/>
+	</bean>
+</beans>
