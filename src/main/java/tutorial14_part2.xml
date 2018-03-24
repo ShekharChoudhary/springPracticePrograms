@@ -7,7 +7,7 @@ defined in any class. Similarly when we use default-destroy-method then this met
 any class.
  -->
  
-<<beans>
+<beans>
 	<bean id="triangle" class="com.shekhar.spring.tutorial14.lifeCycle.part2.Triangle" init-method="startUp" destroy-method="shutDown">
 		<property name="point">
 			<list>
